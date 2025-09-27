@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ====================
+
 # PostgreSQL Settings
 # ====================
 POSTGRES_HOST = os.getenv("DB_HOST", "")
@@ -20,5 +21,6 @@ POSTGRES_PORT = int(os.getenv("DB_PORT", ))
 # ====================
 # Redis Settings
 # ====================
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+REDIS_URL = os.getenv("REDIS_URL", "")
+
 
