@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Load environment variables
 load_dotenv()
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+REDIS_URL = os.getenv("REDIS_URL", "")
 
 # Initialize Redis client
 redis_client = redis.Redis.from_url(REDIS_URL, decode_responses=True)
@@ -88,4 +88,5 @@ def get_conversation_history(user_id, limit=None):
             history.append(json.loads(msg))
         except Exception:
             continue
+
     return history
